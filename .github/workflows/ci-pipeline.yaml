@@ -28,20 +28,3 @@ jobs:
       with:
         push: true
         tags: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}/mock-app-argo-combined:${{ github.ref_name }}
-
-    - name: Update Helm values file
-      uses: mikefarah/yq@master
-      with:
-        cmd: yq eval '.image.tag = "{{ github.ref_name }}"' -i "charts/values.yaml"
-    
-    - name: Commit changes
-      run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add .
-          git commit -m "New image version: ${{ github.ref_name }} [skip ci]"          
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }

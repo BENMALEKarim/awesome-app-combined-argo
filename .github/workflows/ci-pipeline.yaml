@@ -27,4 +27,4 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
-        tags: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}/mock-app-combined-argo:${{ github.ref_name }}
+        tags: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}/mock-app-combined-argo:${{ github.sha }}

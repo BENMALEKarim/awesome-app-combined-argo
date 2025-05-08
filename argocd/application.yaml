@@ -19,12 +19,12 @@ spec:
     namespace: prod-ns
   project: default
   source:
-    repoURL: 'https://github.com/BENMALEKarim/mock-app-combined-argo'
+    repoURL: 'https://github.com/BENMALEKarim/mock-app-combined-argo/'
     path: 'charts'
     targetRevision: main
     helm:
       valueFiles:
-      - '/values.yaml'
+      - 'values.yaml'
 
   syncPolicy:
     automated:

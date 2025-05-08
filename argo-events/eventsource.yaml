@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: new-rs-eventsource
+  namespace: argo-events
+spec:
+  template:
+    serviceAccountName: argo-events
+  resource:
+    app:
+      namespace: prod-ns
+      group: apps
+      version: v1
+      resource: replicasets
+      eventTypes:
+        - ADD
+      filter:
+        afterStart: true

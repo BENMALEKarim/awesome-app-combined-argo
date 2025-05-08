@@ -12,6 +12,7 @@ spec:
         - - name: integration
             template: integration-tests
         - - name: suspend
+            template: suspend
         - - name: promote
             template: promote
             when: "{{steps.integration.outputs.result}} == success"
@@ -26,7 +27,7 @@ spec:
         source: |
           import time
           import random
-          time.sleep(20)
+          time.sleep(5)
           result = random.choices(["success", "fail"], weights=[0.9, 0.1])[0]
           print(result)
 
@@ -36,9 +37,11 @@ spec:
     - name: promote
       container:
         image: quay.io/argoproj/kubectl-argo-rollouts:master
-        args: ["promote mock-app-combined-argo-rollout"]
+        command: ["kubectl-argo-rollouts"]
+        args: ["promote", "mock-app-combined-argo-rollout", "-n", "prod-ns"]
 
     - name: aborte
       container:
         image: quay.io/argoproj/kubectl-argo-rollouts:master
-        args: ["abort mock-app-combined-argo-rollout"]
+        command: ["kubectl-argo-rollouts"]
+        args: ["abort", "mock-app-combined-argo-rollout", "-n", "prod-ns"]

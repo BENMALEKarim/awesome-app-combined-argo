@@ -3,3 +3,28 @@ kind: ServiceAccount
 metadata:
   name: argo-workflow
   namespace: argo-workflows
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: argo-rollouts-access
+  namespace: prod-ns
+rules:
+  - apiGroups: ["argoproj.io"]
+    resources: ["rollouts", "rollouts/status"]
+    verbs: ["get", "list", "watch", "update", "patch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: argo-rollouts-access-binding
+  namespace: prod-ns
+subjects:
+  - kind: ServiceAccount
+    name: argo-workflow
+    namespace: argo-workflows
+roleRef:
+  kind: Role
+  name: argo-rollouts-access
+  apiGroup: rbac.authorization.k8s.io
+  

@@ -1,0 +1,8 @@
+helm:
+  parameters:
+  - name: image.repository
+    value: benmalekarim/mock-app-combined-argo
+    forcestring: true
+  - name: image.tag
+    value: main@sha256:afc842a0b93976a7562ef6828882a251ddca8853fe8696256ad58bd6f8666675
+    forcestring: true

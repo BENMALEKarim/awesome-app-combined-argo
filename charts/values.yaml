@@ -1,6 +1,6 @@
 appName: mock-app-argo-combined
 image:
   repository: benmalekarim/mock-app-argo-combined
-  tag: v2.3.0
+  tag: WILL_BE_UPDSATED_BY_CI
 replicas: 5
 message: "AWESOME APP"

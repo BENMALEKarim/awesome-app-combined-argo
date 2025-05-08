@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: WorkflowTemplate
 metadata:
   name: promotion-workflow-template
+  namespace: argo-workflows
 spec:
   serviceAccountName: argo-workflow
   entrypoint: promotion-rollout

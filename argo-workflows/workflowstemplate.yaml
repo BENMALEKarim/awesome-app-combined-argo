@@ -10,6 +10,7 @@ spec:
       steps:
         - - name: integration
             template: integration-tests
+        - - name: suspend
         - - name: promote
             template: promote
             when: "{{steps.integration.outputs.result}} == success"
@@ -27,6 +28,9 @@ spec:
           time.sleep(20)
           result = random.choices(["success", "fail"], weights=[0.9, 0.1])[0]
           print(result)
+
+    - name: suspend
+      suspend: {}
 
     - name: promote
       container:

@@ -4,5 +4,5 @@ helm:
     value: benmalekarim/mock-app-combined-argo
     forcestring: true
   - name: image.tag
-    value: main@sha256:afc842a0b93976a7562ef6828882a251ddca8853fe8696256ad58bd6f8666675
+    value: main@sha256:39347cdefcf4e5624eef771a5a085503139ae99cc1b4df6b19c7863b6f512a97
     forcestring: true

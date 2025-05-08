@@ -30,12 +30,10 @@ spec:
 
     - name: promote
       container:
-        image: alpine
-        command: [sh, -c]
-        args: ["echo 'Promoting... SUCCESS'"]
+        image: quay.io/argoproj/kubectl-argo-rollouts:master
+        args: ["promote mock-app-combined-argo-rollout"]
 
     - name: aborte
       container:
-        image: alpine
-        command: [sh, -c]
-        args: ["echo 'Aborting... FAILURE'"]
+        image: quay.io/argoproj/kubectl-argo-rollouts:master
+        args: ["abort mock-app-combined-argo-rollout"]

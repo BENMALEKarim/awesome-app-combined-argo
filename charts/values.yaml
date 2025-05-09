@@ -1,6 +1,6 @@
 appName: mock-app-combined-argo
 image:
   repository: benmalekarim/mock-app-combined-argo
-  tag: b6022629f2592686f1a6452a3e8197d7aeeb9154
+  tag: f3b5e91b64c2f3d870a4f43cbee2fcbf90846555
 replicas: 4
 message: "AWESOME APP"

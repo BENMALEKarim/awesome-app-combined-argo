@@ -12,7 +12,7 @@ spec:
       steps:
         - setWeight: 25
         - pause: {}
-  revisionHistoryLimit: 2
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: {{ .Values.appName }}

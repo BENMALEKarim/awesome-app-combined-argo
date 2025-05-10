@@ -1,6 +1,6 @@
 appName: awesome-app
 image:
   repository: benmalekarim/awesome-app
-  tag: b764e45cb539e4c7c88c9f6846ce381df3163d66
+  tag: 9622cc03b28f500d545f28ba9fbcf6943aa02ec4
 replicas: 4
 message: "AWESOME APP"

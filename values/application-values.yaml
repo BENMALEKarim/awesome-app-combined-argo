@@ -3,3 +3,5 @@ image:
 service:
   type: NodePort
   nodePort: 30083
+rollout:
+  enabled: true

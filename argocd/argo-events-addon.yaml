@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: 'https://argoproj.github.io/argo-helm'
     chart: 'argo-events'
-    targetRevision: v1.9.6
+    targetRevision: 2.4.15
     helm:
       releaseName: argo-events
   syncPolicy:

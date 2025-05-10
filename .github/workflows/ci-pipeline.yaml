@@ -31,4 +31,4 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
-        tags: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}/awesome-app-combined-argo:${{ github.sha }}
+        tags: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}/awesome-app:${{ github.sha }}

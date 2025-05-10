@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-rollouts-addon
+  namespace: argocd
+spec:
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: argo-rollouts
+  project: default
+  source:
+    repoURL: 'https://argoproj.github.io/argo-helm'
+    chart: 'argo-rollouts'
+    targetRevision: v1.8.2
+    helm:
+      valuesObject:
+        dashboard:
+          enabled: true
+          service:
+            type: NodePort
+            nodePort: 30082
+          extraArgs: [--insecure-skip-tls-verify]
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

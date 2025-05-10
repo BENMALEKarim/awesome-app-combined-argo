@@ -1,0 +1,4 @@
+server:
+  authModes: [server]
+  serviceType: NodePort
+  serviceNodePort: 30081

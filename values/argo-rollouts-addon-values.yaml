@@ -1,0 +1,6 @@
+dashboard:
+  enabled: true
+  service:
+    type: NodePort
+    nodePort: 30082
+  extraArgs: [--insecure-skip-tls-verify]

@@ -9,17 +9,15 @@ spec:
     namespace: argo-rollouts
   project: default
   source:
-    repoURL: 'https://argoproj.github.io/argo-helm'
+  - repoURL: 'https://argoproj.github.io/argo-helm'
     chart: 'argo-rollouts'
     targetRevision: 2.39.5
     helm:
-      valuesObject:
-        dashboard:
-          enabled: true
-          service:
-            type: NodePort
-            nodePort: 30082
-          extraArgs: [--insecure-skip-tls-verify]
+      valueFiles:
+      - '$values/values/argo-rollouts-addon-values.yaml'
+  - repoURL: 'https://github.com/BENMALEKarim/awesome-app-combined-argo/'
+    targetRevision: main
+    ref: values
   syncPolicy:
     automated:
       prune: true

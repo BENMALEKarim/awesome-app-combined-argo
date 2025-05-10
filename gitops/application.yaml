@@ -18,13 +18,16 @@ spec:
     server: "https://kubernetes.default.svc"
     namespace: prod-ns
   project: default
-  source:
-    repoURL: 'https://github.com/BENMALEKarim/awesome-app-combined-argo/'
-    path: 'charts'
-    targetRevision: main
+  sources:
+  - repoURL: 'https://BENMALEKarim/github.io/awesome-app-helm'
+    chart: 'awesome-app'
+    targetRevision: 1.0.0
     helm:
       valueFiles:
-      - 'values.yaml'
+      - '$values/values/application-values.yaml'
+  - repoURL: 'https://github.com/BENMALEKarim/awesome-app-combined-argo/'
+    targetRevision: main
+    ref: values
 
   syncPolicy:
     automated:

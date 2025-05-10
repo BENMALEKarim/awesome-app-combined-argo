@@ -9,15 +9,15 @@ spec:
     namespace: argo-workflows
   project: default
   source:
-    repoURL: 'https://argoproj.github.io/argo-helm'
+  - repoURL: 'https://argoproj.github.io/argo-helm'
     chart: 'argo-workflows'
     targetRevision: 0.45.14
     helm:
-      valuesObject:
-        server:
-          authModes: [server]
-          serviceType: NodePort
-          serviceNodePort: 30081
+      valueFiles:
+      - '$values/values/argo-rollouts-addon-values.yaml'
+  - repoURL: 'https://github.com/BENMALEKarim/awesome-app-combined-argo/'
+    targetRevision: main
+    ref: values
   syncPolicy:
     automated:
       prune: true

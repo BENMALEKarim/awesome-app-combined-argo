@@ -8,7 +8,7 @@ spec:
     server: "https://kubernetes.default.svc"
     namespace: argo-rollouts
   project: default
-  source:
+  sources:
   - repoURL: 'https://argoproj.github.io/argo-helm'
     chart: 'argo-rollouts'
     targetRevision: 2.39.5

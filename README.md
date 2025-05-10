@@ -1,1 +1,1 @@
-# mock-app-combined-argo
+# awesome-app-combined-argo

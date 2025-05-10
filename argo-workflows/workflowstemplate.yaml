@@ -16,8 +16,8 @@ spec:
         - - name: promote
             template: promote
             when: "{{steps.integration.outputs.result}} == success"
-          - name: aborte
-            template: aborte
+          - name: abort
+            template: abort
             when: "{{steps.integration.outputs.result}} == fail"
 
     - name: integration-tests
@@ -40,7 +40,7 @@ spec:
         command: ["kubectl-argo-rollouts"]
         args: ["promote", "mock-app-combined-argo-rollout", "-n", "prod-ns"]
 
-    - name: aborte
+    - name: abort
       container:
         image: quay.io/argoproj/kubectl-argo-rollouts:master
         command: ["kubectl-argo-rollouts"]

@@ -11,11 +11,6 @@ spec:
     - name: new-rs
       eventSourceName: new-rs-eventsource
       eventName: app
-      filters:
-        data:
-          - path: "metadata.labels.rollouts-pod-template-hash"
-            type: string
-            expression: "event.input != null"
   triggers:
     - template:
         name: run-promotion-workflow

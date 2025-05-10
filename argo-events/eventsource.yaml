@@ -16,3 +16,4 @@ spec:
         - ADD
       filter:
         afterStart: true
+        prefix: "mock-app-combine-argo-rollout"

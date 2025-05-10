@@ -22,4 +22,4 @@ COPY . .
 
 ENTRYPOINT python3 app.py
 
-EXPOSE 5000
+EXPOSE 8080

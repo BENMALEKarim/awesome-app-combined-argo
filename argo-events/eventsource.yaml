@@ -16,3 +16,5 @@ spec:
         - ADD
       filter:
         afterStart: true
+        labels:
+          rollouts-pod-template-hash: "*"

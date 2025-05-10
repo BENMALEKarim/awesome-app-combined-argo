@@ -21,7 +21,7 @@ spec:
         - name: {{ .Values.appName }}-container
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
-          - containerPort: 5000
+          - containerPort: 8080
           envFrom:
           - configMapRef:
               name: {{ .Values.appName }}-configmap

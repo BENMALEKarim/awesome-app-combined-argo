@@ -7,4 +7,4 @@ app = Flask(__name__)
 def welcome():
     return 'Hello Karim and Swisscom/Udemy CoP Devops: ' + os.environ.get('MESSAGE')
 
-app.run(debug=True, host='0.0.0.0', port=5000)
+app.run(debug=True, host='0.0.0.0', port=8080)

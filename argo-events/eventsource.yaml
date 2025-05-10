@@ -16,4 +16,4 @@ spec:
         - ADD
       filter:
         afterStart: true
-        prefix: "mock-app-combined-argo-rollout"
+        prefix: "awesome-app-rollout"

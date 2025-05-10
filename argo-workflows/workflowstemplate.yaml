@@ -33,10 +33,10 @@ spec:
       container:
         image: quay.io/argoproj/kubectl-argo-rollouts:master
         command: ["kubectl-argo-rollouts"]
-        args: ["promote", "mock-app-combined-argo-rollout", "-n", "prod-ns"]
+        args: ["promote", "awesome-app-rollout", "-n", "prod-ns"]
 
     - name: abort
       container:
         image: quay.io/argoproj/kubectl-argo-rollouts:master
         command: ["kubectl-argo-rollouts"]
-        args: ["abort", "mock-app-combined-argo-rollout", "-n", "prod-ns"]
+        args: ["abort", "awesome-app-rollout", "-n", "prod-ns"]

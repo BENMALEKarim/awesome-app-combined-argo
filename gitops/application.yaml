@@ -19,7 +19,7 @@ spec:
     namespace: prod-ns
   project: default
   sources:
-  - repoURL: 'https://BENMALEKarim/github.io/awesome-app-helm'
+  - repoURL: 'https://BENMALEKarim.github.io/awesome-app-helm'
     chart: 'awesome-app'
     targetRevision: 1.0.0
     helm:

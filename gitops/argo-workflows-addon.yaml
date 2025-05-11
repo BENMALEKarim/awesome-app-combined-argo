@@ -14,7 +14,7 @@ spec:
     targetRevision: 0.45.14
     helm:
       valueFiles:
-      - '$values/values/argo-rollouts-addon-values.yaml'
+      - '$values/values/argo-workflows-addon-values.yaml'
   - repoURL: 'https://github.com/BENMALEKarim/awesome-app-combined-argo/'
     targetRevision: main
     ref: values

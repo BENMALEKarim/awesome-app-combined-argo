@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-events-resources
+  namespace: argocd
+spec:
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: argo-events
+  project: default
+  source:
+    repoURL: 'https://github.com/BENMALEKarim/awesome-app-combined-argo/'
+    targetRevision: main
+    path: resources/argo-events
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

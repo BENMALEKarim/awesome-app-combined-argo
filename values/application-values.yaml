@@ -1,6 +1,6 @@
 image:
   repository: benmalekarim/awesome-app
-  tag: b731b9e6f60ca10fb82323657c6f2e1230eec069
+  tag: 82e1cab10e3add4a54748d43decc0ab0b7dd2736
 service:
   type: NodePort
   nodePort: 30083

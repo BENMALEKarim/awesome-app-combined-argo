@@ -6,6 +6,3 @@ service:
   nodePort: 30083
 rollout:
   enabled: true
-cm:
-  config:
-    bg_color: "#87CEEB"

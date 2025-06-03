@@ -8,7 +8,7 @@ spec:
     server: "https://kubernetes.default.svc"
     namespace: app
   project: default
-  sources:
+  source:
     repoURL: 'https://BENMALEKarim.github.io/awesome-app-helm'
     chart: 'players-info-backend'
     targetRevision: 1.0.0

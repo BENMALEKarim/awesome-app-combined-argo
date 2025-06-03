@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgresql
+  namespace: argocd
+spec:
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: postgresql
+  project: default
+  sources:
+  - repoURL: 'registry-1.docker.io/bitnamicharts'
+    chart: 'postgresql'
+    targetRevision: 16.7.8
+    helm:
+      releaseName: postgresql
+      valueFiles:
+      - '$values/values/postgresql-values.yaml'
+  - repoURL: 'https://github.com/BENMALEKarim/awesome-app-combined-argo/'
+    targetRevision: main
+    ref: values
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

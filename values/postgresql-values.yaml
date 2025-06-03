@@ -1,0 +1,23 @@
+auth:
+  postgresPassword: mysecretpassword
+
+primary:
+  persistence:
+    enabled: false
+  initdb:
+    scripts:
+      init.sql: |
+        CREATE TABLE IF NOT EXISTS players (
+          id SERIAL PRIMARY KEY,
+          name TEXT NOT NULL,
+          nationality TEXT NOT NULL,
+          current_club TEXT NOT NULL,
+          year_of_birth INTEGER NOT NULL
+        );
+
+        INSERT INTO players (name, nationality, current_club, year_of_birth) VALUES
+        ('Lionel Messi', 'Argentina', 'Inter Miami', 1987),
+        ('Kylian Mbappé', 'France', 'Real Madrid', 1998),
+        ('Erling Haaland', 'Norway', 'Manchester City', 2000),
+        ('Cristiano Ronaldo', 'Portugal', 'Al Nassr', 1985),
+        ('Jude Bellingham', 'England', 'Real Madrid', 2003);
